@@ -91,4 +91,6 @@
 		vertical-align: baseline;
 		margin-right: 10px;
 	}
+
+	li.el-submenu .el-submenu__title{height:45px ;line-height:45px ;}
 </style>

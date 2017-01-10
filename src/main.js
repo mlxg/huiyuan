@@ -23,9 +23,9 @@ import Page6 from './components/nav3/Page6.vue'
 import echarts from './components/charts/echarts.vue'
 import userList from './components/nav1/userList.vue'
 
-Vue.use(ElementUI)
-Vue.use(VueRouter)
-Vue.use(Vuex)
+Vue.use(ElementUI);
+Vue.use(VueRouter);
+Vue.use(Vuex);
 
 const routes = [
     {

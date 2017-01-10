@@ -19,6 +19,12 @@
                     <el-date-picker type="date" placeholder="选择日期" v-model="form.registerDateEnd"
                     ></el-date-picker>
                 </el-form-item>
+                <el-form-item label="用户来源：">
+                    <el-select v-model="form.registerSource" placeholder="请选择活动区域">
+                        <el-option label="区域一" value="shanghai"></el-option>
+                        <el-option label="区域二" value="beijing"></el-option>
+                    </el-select>
+                </el-form-item>
                 <el-form-item label="品牌/车型：">
                     <el-select v-model="form.brandName" placeholder="请选择活动区域">
                         <el-option label="区域一" value="shanghai"></el-option>
@@ -29,10 +35,10 @@
                         <el-option label="区域二" value="beijing"></el-option>
                     </el-select>
                 </el-form-item>
-                <el-form-item label="用户来源：">
-                    <el-select v-model="form.registerSource" placeholder="请选择活动区域">
-                        <el-option label="区域一" value="shanghai"></el-option>
-                        <el-option label="区域二" value="beijing"></el-option>
+                <el-form-item label="是否可用：">
+                    <el-select v-model="form.status" placeholder="请选择">
+                        <el-option label="是" value="shanghai"></el-option>
+                        <el-option label="否" value="beijing"></el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="城市：">
@@ -45,23 +51,25 @@
                         <el-option label="区域二" value="beijing"></el-option>
                     </el-select>
                 </el-form-item>
-                <el-form-item>
-                    <el-input placeholder="请输入内容" v-model="realname">
-                        <el-select v-model="mobilephone" slot="prepend" placeholder="请选择" class="el-select-w">
-                            <el-option label="客户名称" value="1"></el-option>
-                            <el-option label="手机号" value="2"></el-option>
-                        </el-select>
-                    </el-input>
+                <!--<el-form-item>-->
+                    <!--<el-input placeholder="请输入内容" v-model="form.realname">-->
+                        <!--<el-select v-model="form.mobilephone" slot="prepend" placeholder="请选择" class="el-select-w">-->
+                            <!--<el-option label="客户名称" value="1"></el-option>-->
+                            <!--<el-option label="手机号" value="2"></el-option>-->
+                        <!--</el-select>-->
+                    <!--</el-input>-->
+                <!--</el-form-item>-->
+                <el-form-item label="客户名称：">
+                    <el-input v-model="form.realname"></el-input>
                 </el-form-item>
-                <el-form-item label="是否可用：">
-                    <el-select v-model="form.status" placeholder="请选择">
-                        <el-option label="是" value="shanghai"></el-option>
-                        <el-option label="否" value="beijing"></el-option>
-                    </el-select>
+                <el-form-item label="手机号:">
+                    <el-input v-model="form.mobilephone"></el-input>
                 </el-form-item>
+
                 <el-col :span="24">
                     <el-form-item class="el-submit">
                         <el-button type="primary" icon="search">查询</el-button>
+                        <el-button icon="reset">重置</el-button>
                         <el-button @click="handleAdd">新增</el-button>
                     </el-form-item>
                 </el-col>
@@ -350,8 +358,8 @@
 	}
 	.el-date-editor.el-input {width: 217px;}
     .el-select-w{width:120px}
-    .el-input{width:440px}
-    .el-submit{width:335px;margin:10px auto;display:block}
+    .el-input{width:217px}
+    .el-submit{width:375px;margin:10px auto;display:block}
 
 </style>
 
