@@ -13,7 +13,7 @@
 		components: {
 		},
 		created: function () {
-			this.$router.replace('/Table')
+			this.$router.replace('/userList')
 		}
 	}
 </script>
@@ -93,4 +93,6 @@
 	}
 
 	li.el-submenu .el-submenu__title{height:45px ;line-height:45px ;}
+	div.panel-center aside{width:165px !important;}
+	div.panel-center section{left:165px !important;}
 </style>

@@ -20,17 +20,17 @@
                     ></el-date-picker>
                 </el-form-item>
                 <el-form-item label="用户来源：">
-                    <el-select v-model="form.registerSource" placeholder="请选择活动区域">
-                        <el-option label="区域一" value="shanghai"></el-option>
-                        <el-option label="区域二" value="beijing"></el-option>
+                    <el-select v-model="form.registerSource" placeholder="请选择">
+                        <el-option label="网站注册" value="shanghai"></el-option>
+                        <el-option label="移动APP" value="beijing"></el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="品牌/车型：">
-                    <el-select v-model="form.brandName" placeholder="请选择活动区域">
+                    <el-select v-model="form.brandName" placeholder="请选择品牌">
                         <el-option label="区域一" value="shanghai"></el-option>
                         <el-option label="区域二" value="beijing"></el-option>
                     </el-select>
-                    <el-select v-model="form.brandType" placeholder="请选择活动区域">
+                    <el-select v-model="form.brandType" placeholder="请选择车型">
                         <el-option label="区域一" value="shanghai"></el-option>
                         <el-option label="区域二" value="beijing"></el-option>
                     </el-select>
@@ -51,19 +51,19 @@
                         <el-option label="区域二" value="beijing"></el-option>
                     </el-select>
                 </el-form-item>
-                <!--<el-form-item>-->
-                    <!--<el-input placeholder="请输入内容" v-model="form.realname">-->
-                        <!--<el-select v-model="form.mobilephone" slot="prepend" placeholder="请选择" class="el-select-w">-->
-                            <!--<el-option label="客户名称" value="1"></el-option>-->
-                            <!--<el-option label="手机号" value="2"></el-option>-->
-                        <!--</el-select>-->
-                    <!--</el-input>-->
-                <!--</el-form-item>-->
+                <el-form-item>
+                    <el-input placeholder="请输入内容" v-model="form.realname">
+                        <el-select v-model="form.mobilephone" slot="prepend" placeholder="请选择" class="el-select-w">
+                            <el-option label="客户名称" value="1"></el-option>
+                            <el-option label="手机号" value="2"></el-option>
+                        </el-select>
+                    </el-input>
+                </el-form-item>
                 <el-form-item label="客户名称：">
-                    <el-input v-model="form.realname"></el-input>
+                    <el-input v-model="form.realname" placeholder="填写客户名称"></el-input>
                 </el-form-item>
                 <el-form-item label="手机号:">
-                    <el-input v-model="form.mobilephone"></el-input>
+                    <el-input v-model="form.mobilephone" placeholder="填写手机号"></el-input>
                 </el-form-item>
 
                 <el-col :span="24">
@@ -80,13 +80,13 @@
             <el-table :data="tableData" highlight-current-row v-loading="listLoading" style="width: 100%;">
                 <el-table-column type="index" width="50">
                 </el-table-column>
-                <el-table-column prop="name" label="姓名" width="180" sortable>
+                <el-table-column prop="name" label="姓名" sortable>
                 </el-table-column>
-                <el-table-column prop="sex" label="性别" width="100" :formatter="formatSex" sortable>
+                <el-table-column prop="sex" label="性别" :formatter="formatSex" sortable>
                 </el-table-column>
-                <el-table-column prop="age" label="年龄" width="100" sortable>
+                <el-table-column prop="age" label="年龄"  sortable>
                 </el-table-column>
-                <el-table-column prop="birth" label="生日" width="180" sortable>
+                <el-table-column prop="birth" label="生日"  sortable>
                 </el-table-column>
                 <el-table-column prop="addr" label="地址" sortable>
                 </el-table-column>
@@ -250,7 +250,7 @@
 				//console.log(row);
 				var _this=this;
 				this.$confirm('确认删除该记录吗?', '提示', {
-					//type: 'warning'
+					type: 'warning'
 				}).then(() => {
 					_this.listLoading=true;
 					NProgress.start();
@@ -357,7 +357,7 @@
 		padding: 10px 10px 0px 10px;
 	}
 	.el-date-editor.el-input {width: 217px;}
-    .el-select-w{width:120px}
+    .el-select-w{width:105px}
     .el-input{width:217px}
     .el-submit{width:375px;margin:10px auto;display:block}
 
